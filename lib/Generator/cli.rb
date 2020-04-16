@@ -8,10 +8,10 @@ class Cli
 
         input = gets.strip.downcase
         if input = "list"
-            character_list
+            Api.get_list
         elsif input = "random"
             Api.random_quote
-            
+
         end
     end
 end
