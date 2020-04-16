@@ -6,12 +6,22 @@ class Cli
         puts " "
         puts "Enter 'list' to see all characters, 'random' to get a random quote, or 'exit' to quit"
 
-        input = gets.strip.downcase
-        if input = "list"
-            Api.get_list
-        elsif input = "random"
-            Api.random_quote
+        input = ""
+
+        while input != "exit"
+
+            input = gets.strip.downcase
+
+            case input
+            
+            when "list"
+                Api.get_list
+                
+            when "random"
+                Api.random_quote
+            end
 
         end
+        
     end
 end
