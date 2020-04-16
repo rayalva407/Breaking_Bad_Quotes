@@ -9,4 +9,12 @@ class Api
         end
     end
 
+    def self.random_quote
+        url = "/api/quote/random"
+        uri = URI.parse(url)
+        response = Net:HTTP.get_response(URI(uri))
+        quote = JSON.parse(response.body)
+        puts "#{quote}"
+    end
+
 end
