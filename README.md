@@ -6,4 +6,4 @@ Type 'list' to get a character list then type the character number to see their 
 Type 'random' to get a random quote from a random character.
 Type 'exit' to quit.
 
-##Instructions
+#Instructions

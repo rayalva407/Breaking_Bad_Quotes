@@ -13,8 +13,6 @@ class Api
         url = "https://www.breakingbadapi.com/api/quote/random"
         response = Net::HTTP.get_response(URI(url))
         quote = JSON.parse(response.body)
-        #puts "#{quote[0]["quote"]} -- #{quote[0]["author"]}"
-
     end
 
     def self.character_quotes(character)
@@ -22,7 +20,7 @@ class Api
         response = Net::HTTP.get_response(URI(url))
         quotes = JSON.parse(response.body)
         quotes.each do |quote|
-            character.quotes << quote["quote"]
+            character.quotes << Quote.new(quote["quote"], character)
         end
     end
 
