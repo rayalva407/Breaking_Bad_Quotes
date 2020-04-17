@@ -2,7 +2,6 @@ class Api
 
     def self.get_list
         url = "https://www.breakingbadapi.com/api/characters"
-        #uri = URI.parse(url)
         response = Net::HTTP.get_response(URI(url))
         characters = JSON.parse(response.body)
         characters.each do |char|
@@ -12,7 +11,6 @@ class Api
 
     def self.random_quote
         url = "https://www.breakingbadapi.com/api/quote/random"
-        #uri = URI.parse(url)
         response = Net::HTTP.get_response(URI(url))
         quote = JSON.parse(response.body)
         #puts "#{quote[0]["quote"]} -- #{quote[0]["author"]}"
@@ -23,7 +21,9 @@ class Api
         url = "https://www.breakingbadapi.com/api/quote?author=#{character.name.gsub(" ", "+")}"
         response = Net::HTTP.get_response(URI(url))
         quotes = JSON.parse(response.body)
-        binding.pry
+        quotes.each do |quote|
+            character.quotes << quote["quote"]
+        end
     end
 
 end

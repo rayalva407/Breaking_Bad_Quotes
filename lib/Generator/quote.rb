@@ -5,5 +5,6 @@ class Quote
         @txt = txt
         @character = character
     end
+    
 
 end
