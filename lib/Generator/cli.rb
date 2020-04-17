@@ -53,7 +53,8 @@ class Cli
             end
 
         end
-        
+        puts " "
+        puts "Good-bye"
     end
 
     def print_characters
