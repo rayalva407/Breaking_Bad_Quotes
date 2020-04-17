@@ -26,10 +26,15 @@ class Cli
 
                 if input > 0 && input <= 63
                     Api.character_quotes(Character.all[input.to_i - 1]) if Character.all[input.to_i - 1].quotes.length == 0
-                    Character.all[input.to_i - 1].quotes.each.with_index do |quote, i|
-                        puts " "
-                        puts "#{i}. #{quote} -- #{Character.all[input.to_i - 1].name}"
+                    if Character.all[input - 1].quotes.length > 0
+                        Character.all[input.to_i - 1].quotes.each.with_index(1) do |quote, i|
+                            puts " "
+                            puts "#{i}. #{quote} -- #{Character.all[input.to_i - 1].name}"
+                        end
+                    else
+                        puts "There are no quotes for #{Character.all[input - 1].name} please try again."
                     end
+                    puts "Enter 'list' to see another character's quotes, 'random' to get a random quote, or 'exit' ot quit."
                 elsif input < 0 || input > 63
                     puts "Select a valid number please"
                 end
