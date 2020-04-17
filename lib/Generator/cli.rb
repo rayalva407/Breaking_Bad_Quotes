@@ -6,6 +6,7 @@ class Cli
         puts " "
         puts "Enter 'list' to see all Breaking Bad characters, 'random' to get a random quote, or 'exit' to quit"
         puts " "
+        
         Api.get_list
         input = ""
 
@@ -34,15 +35,17 @@ class Cli
                     else
                         puts "There are no quotes for #{Character.all[input - 1].name} please try again."
                     end
-                    puts "Enter 'list' to see another character's quotes, 'random' to get a random quote, or 'exit' ot quit."
+                    puts "---------------------------------------------------------------------------------------------------"
+                    puts "Enter 'list' to see another character's quotes, 'random' to get a random quote, or 'exit' to quit."
                 elsif input < 0 || input > 63
                     puts "Select a valid number please"
                 end
 
             when "random"
                 puts " "
-                Api.random_quote
-                puts " "
+                puts "#{Api.random_quote[0]["quote"]} -- #{Api.random_quote[0]["author"]}"
+                puts "---------------------------------------------------------------------------------------------------"
+                    puts "Enter 'list' to see another character's quotes, 'random' to get a random quote, or 'exit' to quit."
             end
 
         end
