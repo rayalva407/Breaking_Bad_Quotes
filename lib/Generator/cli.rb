@@ -22,11 +22,14 @@ class Cli
                 puts " "
                 
 
-                input = gets.strip.downcase
+                input = gets.strip.to_i
 
                 if input > 0 && input <= 63
                     Api.character_quotes(Character.all[input.to_i - 1]) if Character.all[input.to_i - 1].quotes.length == 0
-                    puts "#{Character.all[input.to_i - 1].quotes}"
+                    Character.all[input.to_i - 1].quotes.each.with_index do |quote, i|
+                        puts " "
+                        puts "#{i}. #{quote} -- #{Character.all[input.to_i - 1].name}"
+                    end
                 elsif input < 0 || input > 63
                     puts "Select a valid number please"
                 end
