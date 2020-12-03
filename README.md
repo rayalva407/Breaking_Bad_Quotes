@@ -8,13 +8,17 @@ Type 'exit' to quit.
 
 ##Instructions
 Install:
+```
 $ gem install pry
 $ gem install httparty
 $ gem install json
 $ gem install awesome_print
+```
 
 To Run:
+```
 $ ruby bin/breaking_quotes
+```
 
 ##License
 The gem is available as open source under the terms of the MIT License.
