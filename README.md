@@ -1,12 +1,14 @@
-#Breaking Quotes
+Breaking Quotes
 
-##Description
+Description
+
 A CLI application that populates quotes from many of your favorite Breaking Bad Characters.
 Type 'list' to get a character list then type the character number to see their  quotes.
 Type 'random' to get a random quote from a random character.
 Type 'exit' to quit.
 
-##Instructions
+Instructions
+
 Install:
 ```
 $ gem install pry
@@ -20,6 +22,7 @@ To Run:
 $ ruby bin/breaking_quotes
 ```
 
-##License
+License
+
 The gem is available as open source under the terms of the MIT License.
 Available at https://opensource.org/licenses/MIT
