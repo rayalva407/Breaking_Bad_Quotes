@@ -1,6 +1,14 @@
 class Cli
     def run
 
+    def print_characters
+
+        Character.all.each.with_index(1) do |char, i|
+            puts "#{i}. #{char.name}"
+        end
+
+    end
+
         puts " "
         puts "Welcome to Breaking Quotes"
         puts " "
@@ -27,13 +35,13 @@ class Cli
                     Api.character_quotes(Character.all[input - 1]) if Character.all[input - 1].quotes.length == 0
 
                     if Character.all[input - 1].quotes.length > 0
-
                         Character.all[input - 1].quotes.each.with_index(1) do |quote, i|
                             puts " "
                             puts "#{i}. #{quote.txt} -- #{Character.all[input - 1].name}"
                         end
 
                     else
+                        binding.pry
                         puts "There are no quotes for #{Character.all[input - 1].name} please try again."
                     end
 
@@ -58,14 +66,6 @@ class Cli
 
         puts " "
         puts "Good-bye"
-    end
-
-    def print_characters
-
-        Character.all.each.with_index(1) do |char, i|
-            puts "#{i}. #{char.name}"
-        end
-
     end
 
 end
